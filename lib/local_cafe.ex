@@ -187,6 +187,12 @@ defmodule LocalCafe do
           </div>
           <div class="footer-bottom">
             <p>&copy; 2025 {@site_settings.site_name}. All rights reserved.</p>
+            <a href="https://localcafe.org" class="built-with-badge" target="_blank" rel="noopener noreferrer">
+              <img src="/images/localcafe.svg" alt="LocalCafe" class="built-with-logo" />
+
+              <span>Built with</span>
+              <span>localcafe.org</span>
+            </a>
           </div>
         </footer>
       </body>
