@@ -5,9 +5,7 @@
 @layer components {
     /* Menu section wrapper */
     .menu-section {
-        scroll-margin-top: calc(
-            var(--space-16) + 2px
-        ); /* Account for sticky header height */
+        scroll-margin-top: 6rem;
     }
 
     .menu-section-heading {
