@@ -39,6 +39,7 @@ defmodule LocalCafe.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      build: ["assets.build", "build"],
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["cmd --cd assets npm install"],
       "assets.build": ["cmd --cd assets npm run build"],
