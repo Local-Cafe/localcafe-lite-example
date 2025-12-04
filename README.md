@@ -240,7 +240,7 @@ Generated site is in `priv/output/`. Upload this folder to:
 
 ### Prerequisites
 - Elixir 1.15+
-- Node.js 18+ (for asset building)
+- Node.js 18+ (for css building)
 - Git
 
 ### Installation
@@ -336,7 +336,6 @@ local_cafe_lite/
 │   │   ├── base/         # Reset and base styles
 │   │   ├── utilities/    # Reusable patterns
 │   │   └── components/   # Component styles
-│   └── js/               # JavaScript (filtering, slideshow, maps)
 ├── lib/
 │   ├── local_cafe.ex     # Main module with templates
 │   └── local_cafe/
@@ -367,9 +366,6 @@ Edit `assets/css/tokens/typography.css` to change fonts and text sizes.
 
 ### Layout
 Edit `assets/css/components/` files to customize component styles.
-
-### JavaScript
-Edit `assets/js/app.js` for slideshow timing, filter behavior, or map settings.
 
 ## Deployment
 
@@ -417,7 +413,7 @@ npm run build    # Production build
 LocalCafe emphasizes:
 - **Semantic HTML** - Standard elements, accessible markup
 - **Vanilla CSS** - No frameworks, just design tokens and composition
-- **Minimal JavaScript** - Only when truly needed
+- **Zero Runtime JavaScript** - No JS required at runtime.
 - **Static generation** - Fast, secure, and free to host
 - **Small business friendly** - Easy to use, easy to maintain
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**LocalCafe** is a Elixir project that staticly generates a web site with help of nimble publish and heex templates. The project philosophy emphasizes semantic HTML, vanilla CSS with design tokens, and minimal JavaScript.
+**LocalCafe** is a Elixir project that staticly generates a web site with help of nimble publish and heex templates. The project philosophy emphasizes semantic HTML, vanilla CSS with design tokens, and no JavaScript.
 
 ## Development Commands
 
@@ -58,7 +58,6 @@ mix precommit  # Compile with warnings-as-errors, unlock unused deps, format, an
 
 **Current State**:
 
-- Native npm-based ESBuild for JavaScript bundling (no Mix wrapper)
 - Lightning CSS for vanilla CSS processing with autoprefixing
 - TypeScript configuration present (assets/tsconfig.json)
 - Build process runs independently via Node.js
@@ -68,18 +67,16 @@ mix precommit  # Compile with warnings-as-errors, unlock unused deps, format, an
 - Semantic HTML with standard elements
 - Vanilla CSS with design tokens and cascade layers for encapsulation
 - Separate asset pipelines: ESBuild for JS, Lightning CSS for styles ✓
-- Minimal JavaScript - only when explicitly needed
+- No JavaScript - Dont add js unless told to.
 
 ### Asset Pipeline Configuration
 
 **Build System**:
 
-- ESBuild for JavaScript bundling (native npm, no Mix wrapper)
 - Lightning CSS for CSS processing with autoprefixing and modern CSS support
 - Build script: `assets/build.js` - handles both JS and CSS compilation
 - Package manager: npm with `assets/package.json`
 - Outputs:
-  - JavaScript: `output/assets/js/app.js`
   - CSS: `output/assets/css/app.css`
 
 
@@ -105,7 +102,7 @@ mix precommit  # Compile with warnings-as-errors, unlock unused deps, format, an
 
 1. **Use semantic HTML with standard elements**: Avoid custom elements and web components unless explicitly requested
 2. **Vanilla CSS only**: Use design tokens and semantic class names (`.site-nav`, `.btn-primary `). Tailwind/DaisyUI have been removed
-3. **Minimize JavaScript**: Only add JavaScript when explicitly requested. Prefer CSS-only solutions when possible
+3. **No JavaScript**: Have currently have zero runtime js
 4. **Question LiveView usage**: Consider if a traditional controller + HTML response would suffice
 
 **Default Approach**:
@@ -272,7 +269,7 @@ This approach uses:
 
 ### JavaScript and Web Components
 
-**IMPORTANT**: This project minimizes JavaScript and avoids web components unless explicitly requested.
+**IMPORTANT**: This project has no JavaScript and avoids web components unless explicitly requested.
 
 **Default Approach**:
 
@@ -281,21 +278,10 @@ This approach uses:
 - Avoid custom elements (`<flash-message>`, `<custom-dropdown>`, etc.)
 - Only add JavaScript when specifically requested by the user
 
-**When JavaScript IS Needed** (and explicitly requested):
-
-- Keep it minimal and progressive
-- Ensure the page works without JavaScript when possible
-- Use vanilla JavaScript, avoid frameworks
-- Place in `assets/js/` with clear organization
-
-**Existing JavaScript** (legacy):
-Some components currently use web components and JavaScript. These should be considered legacy code and not used as patterns for new features unless explicitly requested.
-
 ### Build System & Live Reload
 
 **Asset Build**: npm-based build system (configured in `assets/build.js`)
 
-- ESBuild for JavaScript bundling
 - Lightning CSS for CSS processing ✓
 - Single build script handles both JS and CSS compilation
 
