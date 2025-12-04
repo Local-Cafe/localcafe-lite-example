@@ -29,12 +29,6 @@
           <img :if={@site_settings.logo} src={path(assigns, @site_settings.logo)} alt={@site_settings.site_name} class="site-logo-image" />
           <span class="site-logo-text">{@site_settings.site_name}</span>
         </a>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
         <ul class="nav-links">
           <li><a href={path(assigns, "/#menu")}>Menu</a></li>
           <li><a href={path(assigns, "#locations")}>Locations</a></li>
@@ -104,10 +98,5 @@
         Built with <a href="https://localcafe.org" target="_blank">localcafe.org</a>
       </div>
     </footer>
-
-    <!-- Inline JS: Close mobile menu when clicking nav links -->
-    <script>
-      document.querySelectorAll('.nav-links a').forEach(l=>l.onclick=()=>document.getElementById('nav-toggle').checked=false);
-    </script>
   </body>
 </html>
