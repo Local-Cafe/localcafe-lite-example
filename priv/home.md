@@ -32,7 +32,7 @@
   image: "/images/example-logo.png",
   logo: "/images/example-logo.png",
   hero: ["Example hero text line 1", "Examle Hero text line 2"],
-  hero_image: ["/images/example-hero.png"],
+  hero_image: "/images/example-hero.png",
   domain: "https://lite.localcafe.org/",
   social_links: [
     instagram: "https://instagram.com/example",
